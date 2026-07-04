@@ -179,6 +179,102 @@ h3 { font-size: 1.1rem; }
 .story-image { border-radius: 8px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 12px 32px rgba(54,116,151,.14); background: var(--navy); }
 .story-image img { display: block; width: 100%; height: 100%; max-height: 42rem; object-fit: cover; }
 .story-copy p { max-width: 52rem; }
+.institutions {
+  overflow: hidden;
+}
+.institutions .section-heading p:not(.eyebrow) {
+  max-width: 48rem;
+}
+.institution-ring {
+  position: relative;
+  min-height: clamp(31rem, 54vw, 40rem);
+  width: 100%;
+  max-width: 70rem;
+  margin: 1.5rem auto 0;
+  perspective: 900px;
+}
+.institution-track {
+  position: absolute;
+  left: 58%;
+  top: 50%;
+  width: min(100%, 58rem);
+  height: clamp(16rem, 31vw, 22rem);
+  border: 2px solid rgba(6, 42, 82, .24);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotateX(56deg) rotateZ(-35deg);
+  box-shadow: inset 0 0 28px rgba(31, 101, 166, .12), 0 20px 48px rgba(6, 42, 82, .1);
+}
+.institution-track:before,
+.institution-track:after {
+  content: "";
+  position: absolute;
+  inset: 10%;
+  border: 1px solid rgba(214, 40, 57, .22);
+  border-radius: inherit;
+}
+.institution-track:after {
+  inset: 24%;
+  border-color: rgba(95, 152, 216, .34);
+}
+.institution-card {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: clamp(5.9rem, 11vw, 8rem);
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.institution-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  filter:
+    drop-shadow(0 0 1px rgba(237, 245, 252, .95))
+    drop-shadow(0 0 3px rgba(6, 42, 82, .32))
+    drop-shadow(0 12px 18px rgba(6, 42, 82, .16));
+}
+.inst-umd img {
+  object-position: 32% center;
+}
+.institution-card {
+  left: 50%;
+  top: 50%;
+  animation: institutionOrbit 34s linear infinite;
+}
+.inst-nasa { animation-delay: 0s; }
+.inst-jhu { animation-delay: -2.615s; }
+.inst-mit { animation-delay: -5.23s; }
+.inst-umd { animation-delay: -7.845s; }
+.inst-cyoc { animation-delay: -10.46s; }
+.inst-nih { animation-delay: -13.075s; }
+.inst-apl { animation-delay: -15.69s; }
+.inst-dulaney { animation-delay: -18.305s; }
+.inst-wootton { animation-delay: -20.92s; }
+.inst-eths { animation-delay: -23.535s; }
+.inst-towson { animation-delay: -26.15s; }
+.inst-mesa { animation-delay: -28.765s; }
+.inst-som { animation-delay: -31.38s; }
+
+@keyframes institutionOrbit {
+  0% { transform: translate(calc(-50% + 28.8rem), calc(-50% - 8rem)) scale(.9); z-index: 5; opacity: .82; filter: brightness(.92); }
+  12.5% { transform: translate(calc(-50% + 15.2rem), calc(-50% - 11.6rem)) scale(.78); z-index: 3; opacity: .62; filter: brightness(.8); }
+  25% { transform: translate(calc(-50% - 7.1rem), calc(-50% - 8.4rem)) scale(.72); z-index: 2; opacity: .52; filter: brightness(.74); }
+  37.5% { transform: translate(calc(-50% - 25.2rem), calc(-50% - .6rem)) scale(.88); z-index: 4; opacity: .76; filter: brightness(.88); }
+  50% { transform: translate(calc(-50% - 28.8rem), calc(-50% + 8rem)) scale(1.02); z-index: 7; opacity: .96; filter: brightness(1); }
+  62.5% { transform: translate(calc(-50% - 15.2rem), calc(-50% + 11.6rem)) scale(1.14); z-index: 9; opacity: 1; filter: brightness(1.08); }
+  75% { transform: translate(calc(-50% + 7.1rem), calc(-50% + 8.4rem)) scale(1.08); z-index: 8; opacity: 1; filter: brightness(1.04); }
+  87.5% { transform: translate(calc(-50% + 25.2rem), calc(-50% + .6rem)) scale(1); z-index: 7; opacity: .94; filter: brightness(1); }
+  100% { transform: translate(calc(-50% + 28.8rem), calc(-50% - 8rem)) scale(.9); z-index: 5; opacity: .82; filter: brightness(.92); }
+}
 .section-heading { max-width: 53rem; margin-bottom: 2rem; }
 .avatar { display: grid; place-items: center; width: 4.5rem; height: 4.5rem; border-radius: 8px; font-family: "JetBrains Mono", monospace; font-weight: 800; color: #031321; background: var(--cyan); }
 .avatar.nasa { background: linear-gradient(135deg, #4bd8ff, #1664ff); color: white; }
@@ -227,6 +323,22 @@ footer { display: flex; justify-content: space-between; gap: 1rem; padding: 1.4r
   .mission-panel { width: min(100%, 23rem); }
   .main-node { width: 7rem; height: 7rem; }
   .node-a, .node-b, .node-c { width: 5.6rem; height: 5.6rem; font-size: .68rem; }
+  .institution-ring {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .85rem;
+    min-height: 0;
+  }
+  .institution-track {
+    display: none;
+  }
+  .institution-card {
+    position: static;
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: 2.4 / 1;
+    animation: none;
+  }
   footer { flex-direction: column; }
 }
 
@@ -279,11 +391,27 @@ footer { display: flex; justify-content: space-between; gap: 1rem; padding: 1.4r
 .photo-card h3 { margin-top: .55rem; color: #ffffff; }
 .photo-card p { margin-top: .65rem; margin-bottom: 1.1rem; color: #eef6ff; line-height: 1.55; }
 .guest-speakers { margin-top: clamp(3rem, 6vw, 5rem); }
+.advisor-section { margin-top: clamp(2.5rem, 5vw, 4rem); }
+.advisor-section.is-hidden { display: none; }
 .compact-heading { max-width: 46rem; }
 .guest-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .guest-card { min-height: 15rem; padding: 1.25rem 0 1.35rem; }
 .guest-card h3 { margin-top: 1rem; color: #ffffff; }
 .guest-card p { color: #eef6ff; }
+.guest-photo-card {
+  padding-top: 0;
+}
+.guest-photo-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 26%;
+  background: #dcebf8;
+}
+.guest-photo-card .person-kicker {
+  margin: 1rem 1rem 0;
+}
 .bio-hero {
   min-height: calc(100vh - 5rem);
   padding: clamp(2rem, 5vw, 5rem);
