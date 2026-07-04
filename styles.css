@@ -455,8 +455,22 @@ footer { display: flex; justify-content: space-between; gap: 1rem; padding: 1.4r
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 @keyframes spin { to { transform: rotate(342deg); } }
 @media (max-width: 920px) {
-  .site-header { align-items: flex-start; }
-  .nav-links { display: none; }
+  .site-header { align-items: flex-start; flex-wrap: wrap; row-gap: .75rem; }
+  .nav-links {
+    order: 3;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    font-size: .82rem;
+  }
+  .nav-links a {
+    opacity: 1;
+    padding: .38rem .55rem;
+    border: 1px solid rgba(216, 242, 255, .24);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .06);
+  }
   .hero, .split, .story, .schedule { grid-template-columns: 1fr; }
   .hero { padding-top: 3rem; }
   .hero-visual { min-height: 30rem; }
