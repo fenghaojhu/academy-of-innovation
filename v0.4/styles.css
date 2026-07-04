@@ -115,10 +115,10 @@ h3 { font-size: 1.1rem; }
   background: rgba(95, 152, 216, .34);
 }
 .hero-highlight.red {
-  color: #8f1f33;
+  color: #155cc4;
 }
 .hero-highlight.red:after {
-  background: rgba(214, 40, 57, .18);
+  background: rgba(21, 92, 196, .18);
 }
 .hero-lede { max-width: 43rem; margin: 1.4rem 0 0; font-size: clamp(1.05rem, 1.7vw, 1.25rem); color: #365e7d; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: 2rem; }
@@ -267,7 +267,7 @@ h3 { font-size: 1.1rem; }
 }
 .institution-track {
   position: absolute;
-  left: 50%;
+  left: 57%;
   top: 50%;
   width: min(100%, 58rem);
   height: clamp(16rem, 31vw, 22rem);
@@ -490,47 +490,7 @@ footer { display: flex; justify-content: space-between; gap: 1rem; padding: 1.4r
     width: clamp(4.3rem, 10vw, 6rem);
   }
 }
-@media (max-width: 640px) {
-  .site-header { padding: .85rem 1rem; }
-  .brand small { display: none; }
-  .nav-cta { min-height: 2.5rem; padding: .65rem .8rem; }
-  h1 { font-size: clamp(2.65rem, 14vw, 4.2rem); max-width: 10ch; }
-  h2 { font-size: clamp(2rem, 10vw, 3rem); }
-  .program-grid, .instructor-grid { grid-template-columns: 1fr; }
-  .hero-visual { min-height: 24rem; }
-  .mission-panel { width: min(100%, 23rem); }
-  .main-node { width: 7rem; height: 7rem; }
-  .node-a, .node-b, .node-c { width: 5.6rem; height: 5.6rem; font-size: .68rem; }
-  .institution-ring {
-    display: block;
-    min-height: clamp(23rem, 100vw, 30rem);
-    max-width: 100%;
-    --orbit-x1: min(10.4rem, 40vw);
-    --orbit-y1: min(4.8rem, 18vw);
-    --orbit-x2: min(5.8rem, 23vw);
-    --orbit-y2: min(7rem, 26vw);
-    --orbit-x3: min(2.9rem, 12vw);
-    --orbit-y3: min(5.2rem, 20vw);
-    --orbit-x4: min(9.1rem, 35vw);
-    --orbit-y4: .35rem;
-  }
-  .institution-track {
-    display: block;
-    width: min(92vw, 28rem);
-    height: clamp(9rem, 42vw, 13rem);
-  }
-  .institution-card {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: clamp(3.1rem, 15vw, 4.6rem);
-    min-height: 0;
-    aspect-ratio: 1 / 1;
-    animation: institutionOrbit 34s linear infinite;
-  }
-  footer { flex-direction: column; }
-}
-
+@media (max-width:640px){.site-header{padding:.85rem 1rem}.brand small{display:none}.nav-cta{min-height:2.5rem;padding:.65rem .8rem}h1{font-size:clamp(2.65rem,14vw,4.2rem);max-width:10ch}h2{font-size:clamp(2rem,10vw,3rem)}.program-grid,.instructor-grid{grid-template-columns:1fr}.hero-visual{min-height:24rem}.mission-panel{width:min(100%,23rem)}.main-node{width:7rem;height:7rem}.node-a,.node-b,.node-c{width:5.6rem;height:5.6rem;font-size:.68rem}.institution-ring{min-height:28rem;overflow:visible;--orbit-x1:min(11.8rem,43vw);--orbit-y1:min(5.8rem,21vw);--orbit-x2:min(6.6rem,25vw);--orbit-y2:min(8rem,29vw);--orbit-x3:min(3.2rem,13vw);--orbit-y3:min(6rem,22vw);--orbit-x4:min(10.4rem,38vw);--orbit-y4:.4rem}.institution-track{left:50%;top:50%;width:min(96vw,23rem);height:13rem;transform:translate(-50%,-50%) rotateX(58deg) rotateZ(-28deg)}.institution-card{left:50%;top:50%;width:clamp(2.25rem,10.8vw,3.2rem);min-height:0;aspect-ratio:1}}
 .people-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
