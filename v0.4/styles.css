@@ -440,6 +440,9 @@ h3 { font-size: 1.1rem; }
   color: #e9f4ff;
   line-height: 1.65;
 }
+.faq-actions {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
 .final-cta { margin: 2rem clamp(1rem, 5vw, 5rem) 5rem; padding: clamp(2rem, 5vw, 4rem); border-radius: 8px; border: 1px solid rgba(118,204,255,.32); background: #1f5f9f; text-align: center; box-shadow: 0 28px 90px rgba(0,0,0,.28); }
 .final-cta h2 { max-width: 12ch; margin: 0 auto; }
 .final-cta p { max-width: 44rem; margin: 1rem auto 1.7rem; color: #ffffff; }
