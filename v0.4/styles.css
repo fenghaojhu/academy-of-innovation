@@ -415,6 +415,31 @@ h3 { font-size: 1.1rem; }
 .outcome-list div:nth-child(3) { --glow-x: 88%; --blue-glow: .64; --red-glow: .22; }
 .outcome-list div:nth-child(4) { --glow-x: 12%; --blue-glow: .64; --red-glow: .22; }
 .outcome-list div:nth-child(5) { --glow-x: -60%; --blue-glow: .42; --red-glow: .14; }
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.faq-grid article {
+  min-height: 13rem;
+  padding: 1.25rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.22);
+  color: #eef6ff;
+  background:
+    radial-gradient(circle at 90% 0%, rgba(214,40,57,.16), transparent 42%),
+    linear-gradient(145deg, #062a52, #0b376a);
+  box-shadow: 0 14px 30px rgba(6,42,82,.18);
+}
+.faq-grid h3 {
+  margin-bottom: .85rem;
+  color: #ffffff;
+  font-size: 1.18rem;
+}
+.faq-grid p {
+  color: #e9f4ff;
+  line-height: 1.65;
+}
 .final-cta { margin: 2rem clamp(1rem, 5vw, 5rem) 5rem; padding: clamp(2rem, 5vw, 4rem); border-radius: 8px; border: 1px solid rgba(118,204,255,.32); background: #1f5f9f; text-align: center; box-shadow: 0 28px 90px rgba(0,0,0,.28); }
 .final-cta h2 { max-width: 12ch; margin: 0 auto; }
 .final-cta p { max-width: 44rem; margin: 1rem auto 1.7rem; color: #ffffff; }
@@ -435,7 +460,7 @@ footer { display: flex; justify-content: space-between; gap: 1rem; padding: 1.4r
   .hero, .split, .story, .schedule { grid-template-columns: 1fr; }
   .hero { padding-top: 3rem; }
   .hero-visual { min-height: 30rem; }
-  .quick-facts, .stats-band, .outcome-list { grid-template-columns: 1fr; }
+  .quick-facts, .stats-band, .outcome-list, .faq-grid { grid-template-columns: 1fr; }
   .schedule-intro,
   .timeline {
     grid-template-columns: 1fr;
@@ -817,12 +842,10 @@ footer { display: flex; justify-content: space-between; gap: 1rem; padding: 1.4r
 .main-node {
   border-color: rgba(214, 40, 57, .46);
 }
-
 .final-cta {
   border-color: rgba(214, 40, 57, .35);
   box-shadow: 0 16px 38px rgba(214,40,57,.12), 0 14px 30px rgba(6,42,82,.18);
 }
-
 .final-cta a:not(.button) {
   color: #ffd9de;
 }
